@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBMC School Club Information</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8ecff, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1f3d;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 720px;
+            padding: 30px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0b1b8a;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0b1b8a;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #b3b9ff;
+            font-size: 15px;
+            background-color: #f9faff;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #0b1b8a;
+            box-shadow: 0 0 0 2px rgba(11, 27, 138, 0.15);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0b1b8a;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #08146b;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #club-info {
+            margin-top: 25px;
+            padding: 18px;
+            border-radius: 8px;
+            background-color: #f1f3ff;
+            border-left: 6px solid #0b1b8a;
+            font-size: 14px;
+            white-space: pre-wrap;
+            color: #1a1f3d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>School Club Information</h1>
+
+        <div class="form-group">
+            <label for="club-select">Select a club</label>
+            <select id="club-select">
+                <option value="">-- Select a club --</option>
+                <option value="math">Math Club</option>
+                <option value="science">Science Club</option>
+                <option value="glee">Glee Club</option>
+                <option value="commarts">Comm Arts Club</option>
+                <option value="cocc">COCC Club</option>
+            </select>
+        </div>
+
+        <button id="show-info" py-click="show_club_info">Show Club Information</button>
+
+        <pre id="club-info"></pre>
+    </div>
+
+    <script type="py" src="main.py"></script>
+</body>
+</html>
